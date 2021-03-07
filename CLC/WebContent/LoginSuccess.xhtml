@@ -11,34 +11,57 @@
 <h:body>
 	<ui:composition template="layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<h2>Response</h2>
+			<h2>Category Page</h2>
 
-			<h1 class="greeting">Hello #{formController.user.username}. Your current orders: </h1>
-
-			<h:dataTable value="#{formController.orders.orders}" var="order">
-				<h:column>
-					<f:facet name="header">Order Number</f:facet>    				
-      				#{order.orderNumber}
-   				</h:column>
-
-				<h:column>
-					<f:facet name="header">Product</f:facet>
-     				#{order.productName}
-  				</h:column>
-
-				<h:column>
-					<f:facet name="header">Price</f:facet>
-      				#{order.price}
-   				</h:column>
-
-				<h:column>
-					<f:facet name="header">Quantity</f:facet>
-      				#{order.quantity}
-   				</h:column>
-			</h:dataTable>
-
+			<h1 class="greeting">Hello #{formController.user.username}. These are the categories </h1>
+			<div class= "d-flex flex-wrap">
+				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				    <h5 class="card-title text-light text-center">Vegetables</h5>
+				  <h:graphicImage class="card-title" url="/resources/images/vegetables.jpg" />
+				  <div class="card-body">
+				    <p class="card-text"></p>
+				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				  </div>
+				</div>
+				
+				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				    <h5 class="card-title text-light text-center">Meat</h5>
+				  <h:graphicImage class="card-title" url="/resources/images/meat.jpg" />
+				  <div class="card-body">
+				    <p class="card-text"></p>
+				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				  </div>
+				</div>
+				
+				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				    <h5 class="card-title text-light text-center">Fruit</h5>
+				  <h:graphicImage class="card-title" url="/resources/images/fruit.jpg" />
+				  <div class="card-body">
+				    <p class="card-text"></p>
+				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				  </div>
+				</div>
+				
+				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				    <h5 class="card-title text-light text-center">Spices</h5>
+				  <h:graphicImage class="card-title" url="/resources/images/spices.jpg" />
+				  <div class="card-body">
+				    <p class="card-text"></p>
+				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				  </div>
+				</div>
+				
+				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				    <h5 class="card-title text-light text-center">Frozen Food</h5>
+				  <h:graphicImage class="card-title" url="/resources/images/frozenfood.jpg" />
+				  <div class="card-body">
+				    <p class="card-text"></p>
+				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				  </div>
+				</div>
+			</div>
 			<h:button value="Home" outcome="Login" />
-
+			
 		</ui:define>
 	</ui:composition>
 </h:body>
