@@ -1,12 +1,15 @@
 package controllers;
 
+import javax.enterprise.inject.Default;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 import beans.User;
+import business.OrdersInterface;
 import beans.Order;
 import beans.Orders;
 
@@ -18,15 +21,19 @@ public class FormController {
 
 	@ManagedProperty(value = "#{user}")
 	public User user;
-	@ManagedProperty(value = "#{orders}")
-	public Orders orders;
+	@ManagedProperty(value = "#{order}")
+	public Order order;
 	
-	public Orders getOrders() {
-		return orders;
+	@Inject
+	@Default
+	public OrdersInterface cart;
+	
+	public void setCart(OrdersInterface cart) {
+		this.cart = cart;
 	}
-
-	public void setOrders(Orders orders) {
-		this.orders = orders;
+	
+	public OrdersInterface getCart()  {
+		return cart;
 	}
 
 	public User getUser() {
@@ -35,6 +42,14 @@ public class FormController {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+	
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 	
 	public String onSubmit(User user) {
@@ -46,5 +61,10 @@ public class FormController {
 	public String loginAttempt(User userIn) {
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", userIn);
 		return "LoginSuccess.xhtml";
+	}
+	
+	public String addToCart(Order order) {
+		cart.add(order);
+		return "ShowCart.xhtml";
 	}
 }
