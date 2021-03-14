@@ -1,5 +1,10 @@
 package beans;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
+@ManagedBean
+@ViewScoped
 public class Order {
 	
 	String orderNumber = "";
@@ -15,10 +20,7 @@ public class Order {
 	}
 	
 	public Order() {
-		this.orderNumber = "897";
-		this.productName = "Product";
-		this.price = 67f;
-		this.quantity = 2;
+		
 	}
 	
 	public String getOrderNumber() {

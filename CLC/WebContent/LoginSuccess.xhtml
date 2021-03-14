@@ -66,23 +66,23 @@
 			<h:form class="mx-auto mt-5 border p-4 bg-dark" >
 			<div class="form-group">
 			    <label for="productName" class="text-light">Product Name:</label>
-			    <h:inputText class="form-control" id="productName" aria-describedby="productNameHelp" placeholder="Enter product name" value="#{order.productName}" />
+			    <h:inputText class="form-control" id="productName" aria-describedby="productNameHelp" placeholder="Enter product name" value="#{formController.order.productName}" />
 				<h:message for="productName" style="color: red" />			    
   			</div>
   			<div class="form-group">
 			    <label for="orderNumber" class="text-light">Order Number:</label>
-			    <h:inputText label="orderNumber" id="orderNumber" class="form-control"  placeholder="Enter order number" value="#{order.orderNumber}" />		    
+			    <h:inputText label="orderNumber" id="orderNumber" class="form-control"  placeholder="Enter order number" value="#{formController.order.orderNumber}" />		    
 				<h:message for="orderNumber" style="color: red" />
   			</div>
   			
   			<div class="form-group">
 			    <label for="price" class="text-light">Price:</label>
-			    <h:inputText class="form-control" id="price" aria-describedby="priceHelp" placeholder="Enter price" value="#{order.price}" />
+			    <h:inputText class="form-control" id="price" aria-describedby="priceHelp" placeholder="Enter price" value="#{formController.order.price}" />
 				<h:message for="price" style="color: red" />			    
   			</div>
   			<div class="form-group">
 			    <label for="password" class="text-light">Quantity:</label>
-			    <h:inputText label="quantity" id="quantity" class="form-control"  placeholder="Enter quantity" value="#{order.quantity}" />		    
+			    <h:inputText label="quantity" id="quantity" class="form-control"  placeholder="Enter quantity" value="#{formController.order.quantity}" />		    
 				<h:message for="quantity" style="color: red" />
   			</div>
 					<h:commandButton value="Submit"
