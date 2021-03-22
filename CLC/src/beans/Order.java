@@ -2,7 +2,9 @@ package beans;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name="Order")
 @ManagedBean
 @ViewScoped
 public class Order {
