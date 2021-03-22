@@ -11,9 +11,8 @@
 <h:body>
 	<ui:composition template="layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<h2>Category Page</h2>
-
-			<h:dataTable value="#{formController.cart.orders}" var="order">
+			<h2 class="p-3 mb-2 bg-primary text-center">Cart</h2>
+			<h:dataTable class= "table table-dark" value="#{formController.cart.orders}" var="order">
 				<h:column>
 					<f:facet name="header">Order Number</f:facet>    				
       				#{order.orderNumber}
@@ -26,7 +25,7 @@
 
 				<h:column>
 					<f:facet name="header">Price</f:facet>
-      				#{order.price}
+      				$#{order.price}
    				</h:column>
 
 				<h:column>
@@ -35,7 +34,6 @@
    				</h:column>
 			</h:dataTable>
 			<h:button value="Home" outcome="LoginSuccess" />
-			
 		</ui:define>
 	</ui:composition>
 </h:body>
