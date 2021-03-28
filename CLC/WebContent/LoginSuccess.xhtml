@@ -11,58 +11,53 @@
 <h:body>
 	<ui:composition template="layouts/commonLayout.xhtml">
 		<ui:define name="content">
-			<h2 class="p-3 mb-2 bg-primary text-center">Category Page</h2> 
+			<h2 class="p-3 mb-2 bg-primary text-center border border-secondary">Category Page</h2> 
 			<h:button value="Home" outcome="Login" />
-			<h1 class="greeting">Hello #{formController.user.username}. These are the categories </h1>
+			<h1 class="greeting">Hello #{formController.user.username}. These are the categories. You name it we got it</h1>
 			<div class= "d-flex flex-wrap">
-				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				<div class="card m-3 border bg-dark border border-primary" style="width: 18rem;">
 				    <h5 class="card-title text-light text-center">Vegetables</h5>
 				  <h:graphicImage class="card-title" url="/resources/images/vegetables.jpg" />
 				  <div class="card-body">
-				    <p class="card-text"></p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				    <p class="text-light">Tomatos Carrots Potatoes Squash Garlic Broccoli Radish Lettuce</p>		    
 				  </div>
 				</div>
 				
-				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				<div class="card m-3 border bg-dark border border-primary" style="width: 18rem;">
 				    <h5 class="card-title text-light text-center">Meat</h5>
 				  <h:graphicImage class="card-title" url="/resources/images/meat.jpg" />
 				  <div class="card-body">
-				    <p class="card-text"></p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				    <p class="text-light">Steak BeefRibs ChickenBreast Porkloin Porkchop Groundbeef</p>
 				  </div>
 				</div>
 				
-				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				<div class="card m-3 border bg-dark border border-primary" style="width: 18rem;">
 				    <h5 class="card-title text-light text-center">Fruit</h5>
 				  <h:graphicImage class="card-title" url="/resources/images/fruit.jpg" />
 				  <div class="card-body">
-				    <p class="card-text"></p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				    <p class="text-light">Apples Pears Pineapple Oranges Kiwi Banana Grapefruit Grapes Limes Lemons</p>
 				  </div>
 				</div>
 				
-				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				<div class="card m-3 border bg-dark border border-primary" style="width: 18rem;">
 				    <h5 class="card-title text-light text-center">Spices</h5>
 				  <h:graphicImage class="card-title" url="/resources/images/spices.jpg" />
 				  <div class="card-body">
-				    <p class="card-text"></p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				    <p class="text-light">GarlicPowder SeasonAll Salt Pepper Nutmeg Saffron Paprika Clove CayennePepper</p>
 				  </div>
 				</div>
 				
-				<div class="card m-3 border bg-dark" style="width: 18rem;">
+				<div class="card m-3 border bg-dark border border-primary" style="width: 18rem;">
 				    <h5 class="card-title text-light text-center">Frozen Food</h5>
 				  <h:graphicImage class="card-title" url="/resources/images/frozenfood.jpg" />
 				  <div class="card-body">
-				    <p class="card-text"></p>
-				    <a href="#" class="btn btn-primary">Go somewhere</a>
+				    <p class="text-light">Pizza Wings Tv-Dinners PopcornChicken Lasagna</p>
 				  </div>
 				</div>
 			</div>
 			
 			<div class="d-flex">
-			<h:form class="mx-auto mt-3 border p-4 bg-dark" >
+			<h:form class="mx-auto mt-3 border p-4 bg-dark border border-primary" >
 			<div class="form-group">
 			    <label for="productName" class="text-light">Product Name:</label>
 			    <h:inputText class="form-control-sm" id="productName" aria-describedby="productNameHelp" placeholder="Enter product name" value="#{formController.order.productName}" />
