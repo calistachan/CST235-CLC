@@ -1,7 +1,11 @@
 package beans;
 
+import java.security.Principal;
+
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -39,5 +43,21 @@ public class User {
 	public User(String username, String password) {
 		this.username = username;
 		this.password = password;
+	}
+	
+	@PostConstruct
+	public void init() {
+		// Get the logged in Principle
+		Principal principle= FacesContext.getCurrentInstance().getExternalContext().getUserPrincipal();
+			if(principle == null)
+			{
+				setUsername("Unknown");
+				setPassword("");
+			}
+			else
+			{
+				setUsername(principle.getName());
+				setPassword("");
+			}
 	}
 }

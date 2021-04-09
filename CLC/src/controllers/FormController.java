@@ -54,11 +54,6 @@ public class FormController {
 		this.order = order;
 	}
 	
-	public String onSubmit(User user) {
-		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", user);
-		login = user;
-		return "LoginSuccess.xhtml";
-	}
 
 	public String loginAttempt(User userIn) {
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("user", userIn);
@@ -68,5 +63,14 @@ public class FormController {
 	public String addToCart(Order order) {
 		cart.add(order);
 		return "ShowCart.xhtml";
+	}
+	
+	public String onLogOff() {
+		// Invalidate the Session to clear the security token
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+			
+		// Redirect to a protected page (so we get a full HTTP Request) to get Login Page
+		return "LoginSuccess.xhtml?faces-redirect=true";
+
 	}
 }
